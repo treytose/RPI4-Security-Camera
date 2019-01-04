@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div style="text-align: center;">
+        <h1> Click to disable the alarm </h1>
+        <h3 id="feedback"> </h3>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    $("body").on("click", function() {
+      disableAlarm();
+    });
+      function disableAlarm() {
+        $.post("/disable", function(resp) {
+          $("#feedback").html("Alarm will be disabled for the next passthrough");
+          $("body").css({'background': 'green'})
+        });
+      }
+    </script>
+  </body>
+</html>
