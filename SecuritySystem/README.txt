@@ -35,3 +35,10 @@ How it works:
   There is an optional web app included that can be run with flask which will allow the user to access
   the security system and disable it for a single passthrough without triggering the alarm. Once the system
   has detected the passthrough the alarm will be reset and trigger on the next passthrough.
+
+Usage:
+  // boot up the security system
+  python alarm.py   
+  
+  // (optional) bootup the webserver to control system through web app
+  python manage.py 
